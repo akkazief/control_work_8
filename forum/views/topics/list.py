@@ -8,7 +8,7 @@ from models import Topic
 
 
 class TopicListView(ListView):
-    template_name = "forum/topics/list.html"
+    template_name = "topics/list.html"
     model = Topic
     context_object_name = "topics"
     paginate_by = 3

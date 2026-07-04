@@ -5,4 +5,7 @@ class AuthorRequiredMixin(UserPassesTestMixin):
 
     def test_func(self):
         obj = self.get_object()
-        return self.request.user == obj.author or self.request.user.groups.filter(name='Moderator').exists()
+        user = self.request.user
+        return (user == obj.author
+        or user.is_superuser
+        or user.groups.filter(name='Moderator').exists() )

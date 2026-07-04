@@ -1,0 +1,1 @@
+from .author_required import AuthorRequiredMixin
