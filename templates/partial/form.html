@@ -1,6 +1,6 @@
 {% load django_bootstrap5 %}
 
-<div class="card my-5 ">
+<div class="card my-5 w-75 mx-auto ">
     <div class="card-header fs-4 text-center py-3">{{form_title}}</div>
     <div class="card-body">
         <form action="{{form_action}}" id="{{form_id}}" method="POST">
@@ -9,6 +9,7 @@
         </form>
     </div>
     <div class="card-footer text-end py-3">
+        <button type="button" class="btn btn-sm btn-secondary me-2" onclick="history.back()">Отмена</button>
         <button type="submit" form="{{form_id}}" class="btn btn-sm btn-primary">
             {{btn_txt}}</button>
     </div>
