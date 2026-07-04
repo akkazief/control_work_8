@@ -129,8 +129,10 @@ USE_TZ = True
 
 # STATIC_URL = ""
 
-# LOGIN_REDIRECT_URL  = ''
-# LOGOUT_REDIRECT_URL = ''
+LOGIN_REDIRECT_URL  = 'forum:main'
+LOGOUT_REDIRECT_URL = 'forum:main'
+
+LOGIN_URL = 'login'
 
 AUTH_USER_MODEL = 'accounts.User'
 
