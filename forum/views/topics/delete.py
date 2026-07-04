@@ -6,7 +6,7 @@ from models import Topic
 from mixins import AuthorRequiredMixin
 
 
-class DeleteProjectView(LoginRequiredMixin,
+class TopicDeleteView(LoginRequiredMixin,
     AuthorRequiredMixin, DeleteView):
 
     template_name = "topics/delete.html"
