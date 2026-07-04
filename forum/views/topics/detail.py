@@ -11,7 +11,7 @@ class TopicDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         replies_qs = self.object.replies.select_related("author").order_by("created_at")
-        paginator = Paginator(replies_qs, 5)
+        paginator = Paginator(replies_qs, 3)
         page_obj = paginator.get_page(self.request.GET.get("page"))
         context["replies"] = page_obj
         context["page_obj"] = page_obj
