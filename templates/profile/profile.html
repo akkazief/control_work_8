@@ -3,7 +3,13 @@
 {% block content %}
 
     <h2>Профиль {{user.username}}</h2>
-    <img src="{{ user.avatar.url }}" alt="Аватар">
+
+    {% if profile_user.avatar %}
+        <img src="{{ profile_user.avatar.url }}" alt="Аватар" class="rounded-circle" width="100">
+    {% else %}
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0x4cKulNJ1h1pX0uo5y68dW1MO2xtZDtRlpzzITHb9g&s=10" alt="Нет аватара" class="rounded-circle" width="100">
+    {% endif %}
+
     <p>Количество сообщений: {{ user.replies.count }}</p>
 
     {% include 'partial/topics_table.html' %}

@@ -6,7 +6,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 class UserProfileView(BaseTopicListView):
-    template_name = "forum/profile.html"
+    template_name = "profile/profile.html"
 
     def get_queryset(self):
         self.user = get_object_or_404(User, pk=self.kwargs['pk'])
