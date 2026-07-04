@@ -9,6 +9,7 @@ def get_avatar_path(instance, filename):
 class User(AbstractUser):
     avatar = models.ImageField(
         upload_to=get_avatar_path,
+        default='avatars/default.jpg',
         verbose_name='Аватар'
     )
 
