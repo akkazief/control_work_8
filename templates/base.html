@@ -17,19 +17,24 @@
     <nav class="navbar navbar-expand-md bg-dark py-2">
             <div class="container">
 
-                {% block search %}
-                {% endblock %}
-
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto text-white ">
-                        <li class="nav-item ">
-                            {% block add_issue %}
-                            {% endblock %}
-                        </li>
+                    <ul class="navbar-nav text-white ">
 
                         <li class="nav-item">
-<!--                            <a class="nav-link text-white" href="">Главная</a>-->
+                            <a class="nav-link text-white" href="{% url 'forum:topic_list' %}">Главная</a>
                         </li>
+                        {% block add_issue %}
+
+                            {% if request.user.is_authenticated %}
+                        <li class="nav-item ">
+                                    <a class="nav-link text-white" href="{% url 'forum:topic_create' %}">Добавить тему</a>
+                        </li>
+                            {% else %}
+                            {% endif %}
+
+                        {% endblock %}
+                       
+
                         {% if request.user.is_authenticated %}
                             <li>
                                 <a class="nav-link text-white">{{request.user}}</a>

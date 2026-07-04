@@ -1,6 +1,6 @@
 from django import forms
 
-from models import Topic
+from forum.models import Topic
 
 
 class TopicForm(forms.ModelForm):

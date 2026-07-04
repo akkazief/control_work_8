@@ -2,9 +2,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import UpdateView
 from django.urls import reverse_lazy
 
-from forms import TopicForm
-from mixins import AuthorRequiredMixin
-from models import Topic
+from forum.forms import TopicForm
+from forum.mixins import AuthorRequiredMixin
+from forum.models import Topic
 
 class TopicUpdateView(LoginRequiredMixin, AuthorRequiredMixin, UpdateView):
     model = Topic
@@ -12,4 +12,4 @@ class TopicUpdateView(LoginRequiredMixin, AuthorRequiredMixin, UpdateView):
     form_class = TopicForm
 
     def get_success_url(self):
-        return reverse_lazy('topic-detail', kwargs={'pk': self.object.pk})
+        return reverse_lazy('topic_detail', kwargs={'pk': self.object.pk})
