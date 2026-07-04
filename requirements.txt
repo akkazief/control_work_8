@@ -3,3 +3,4 @@ psycopg2-binary==2.9.12
 django-environ==0.13.0
 ruff==0.15.16
 django-bootstrap5==26.2
+pillow==12.3.0
