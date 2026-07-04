@@ -1,0 +1,236 @@
+[
+{
+  "model": "forum.topic",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-07-04T10:19:58.691Z",
+    "updated_at": "2026-07-04T10:19:58.691Z",
+    "title": "awdwadawd",
+    "content": "awdawdawd",
+    "author": [
+      "admin"
+    ]
+  }
+},
+{
+  "model": "forum.topic",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-07-04T10:52:21.330Z",
+    "updated_at": "2026-07-04T10:52:21.330Z",
+    "title": "aaaa",
+    "content": "aasdasdasd",
+    "author": [
+      "admin"
+    ]
+  }
+},
+{
+  "model": "forum.topic",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-07-04T10:54:04.557Z",
+    "updated_at": "2026-07-04T10:54:04.557Z",
+    "title": "awdawdawd",
+    "content": "awdwadawd",
+    "author": [
+      "admin"
+    ]
+  }
+},
+{
+  "model": "forum.topic",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-07-04T10:54:08.822Z",
+    "updated_at": "2026-07-04T10:54:08.823Z",
+    "title": "awdwadawd",
+    "content": "awdwadawd",
+    "author": [
+      "admin"
+    ]
+  }
+},
+{
+  "model": "forum.topic",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-07-04T10:54:12.029Z",
+    "updated_at": "2026-07-04T11:37:55.334Z",
+    "title": "awdwadawdaw",
+    "content": "adsawdawdwad",
+    "author": [
+      "admin"
+    ]
+  }
+},
+{
+  "model": "forum.topic",
+  "pk": 8,
+  "fields": {
+    "created_at": "2026-07-04T12:12:50.109Z",
+    "updated_at": "2026-07-04T12:12:50.109Z",
+    "title": "Новая тема для проверки",
+    "content": "Извините что много тем",
+    "author": [
+      "alkaw"
+    ]
+  }
+},
+{
+  "model": "forum.topic",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-07-04T12:13:45.079Z",
+    "updated_at": "2026-07-04T12:13:45.079Z",
+    "title": "Тема от модера",
+    "content": "фцвцфвфцв",
+    "author": [
+      "moder"
+    ]
+  }
+},
+{
+  "model": "forum.reply",
+  "pk": 1,
+  "fields": {
+    "created_at": "2026-07-04T11:36:42.967Z",
+    "updated_at": "2026-07-04T11:36:42.967Z",
+    "topic": 6,
+    "author": [
+      "admin"
+    ],
+    "content": "wasdawdwadawd"
+  }
+},
+{
+  "model": "forum.reply",
+  "pk": 2,
+  "fields": {
+    "created_at": "2026-07-04T11:36:46.234Z",
+    "updated_at": "2026-07-04T11:36:46.234Z",
+    "topic": 6,
+    "author": [
+      "admin"
+    ],
+    "content": "awdawdawdawdawdad"
+  }
+},
+{
+  "model": "forum.reply",
+  "pk": 3,
+  "fields": {
+    "created_at": "2026-07-04T11:36:48.385Z",
+    "updated_at": "2026-07-04T11:36:48.385Z",
+    "topic": 6,
+    "author": [
+      "admin"
+    ],
+    "content": "awdawdwadawdwad"
+  }
+},
+{
+  "model": "forum.reply",
+  "pk": 4,
+  "fields": {
+    "created_at": "2026-07-04T11:36:50.645Z",
+    "updated_at": "2026-07-04T11:36:50.645Z",
+    "topic": 6,
+    "author": [
+      "admin"
+    ],
+    "content": "awdawdawdawdawd"
+  }
+},
+{
+  "model": "forum.reply",
+  "pk": 5,
+  "fields": {
+    "created_at": "2026-07-04T11:36:52.682Z",
+    "updated_at": "2026-07-04T11:36:52.682Z",
+    "topic": 6,
+    "author": [
+      "admin"
+    ],
+    "content": "awdwadadawdaw"
+  }
+},
+{
+  "model": "forum.reply",
+  "pk": 6,
+  "fields": {
+    "created_at": "2026-07-04T11:36:55.325Z",
+    "updated_at": "2026-07-04T11:36:55.325Z",
+    "topic": 6,
+    "author": [
+      "admin"
+    ],
+    "content": "awdawdadw"
+  }
+},
+{
+  "model": "forum.reply",
+  "pk": 7,
+  "fields": {
+    "created_at": "2026-07-04T12:08:13.779Z",
+    "updated_at": "2026-07-04T12:08:13.779Z",
+    "topic": 6,
+    "author": [
+      "admin"
+    ],
+    "content": "awdwadawd"
+  }
+},
+{
+  "model": "forum.reply",
+  "pk": 8,
+  "fields": {
+    "created_at": "2026-07-04T12:08:42.515Z",
+    "updated_at": "2026-07-04T12:08:42.515Z",
+    "topic": 6,
+    "author": [
+      "moder"
+    ],
+    "content": "aleeee ne raboeta"
+  }
+},
+{
+  "model": "forum.reply",
+  "pk": 9,
+  "fields": {
+    "created_at": "2026-07-04T12:08:59.308Z",
+    "updated_at": "2026-07-04T12:08:59.308Z",
+    "topic": 6,
+    "author": [
+      "moder"
+    ],
+    "content": "RABOTAET"
+  }
+},
+{
+  "model": "forum.reply",
+  "pk": 10,
+  "fields": {
+    "created_at": "2026-07-04T12:13:27.680Z",
+    "updated_at": "2026-07-04T12:13:27.680Z",
+    "topic": 8,
+    "author": [
+      "moder"
+    ],
+    "content": "классно работает"
+  }
+},
+{
+  "model": "forum.reply",
+  "pk": 11,
+  "fields": {
+    "created_at": "2026-07-04T12:13:32.706Z",
+    "updated_at": "2026-07-04T12:13:32.706Z",
+    "topic": 8,
+    "author": [
+      "moder"
+    ],
+    "content": "все гуд"
+  }
+}
+]

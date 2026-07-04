@@ -1,0 +1,50 @@
+[
+{
+  "model": "auth.group",
+  "fields": {
+    "name": "Moderator",
+    "permissions": [
+      [
+        "add_reply",
+        "forum",
+        "reply"
+      ],
+      [
+        "change_reply",
+        "forum",
+        "reply"
+      ],
+      [
+        "delete_reply",
+        "forum",
+        "reply"
+      ],
+      [
+        "view_reply",
+        "forum",
+        "reply"
+      ],
+      [
+        "add_topic",
+        "forum",
+        "topic"
+      ],
+      [
+        "change_topic",
+        "forum",
+        "topic"
+      ],
+      [
+        "delete_topic",
+        "forum",
+        "topic"
+      ],
+      [
+        "view_topic",
+        "forum",
+        "topic"
+      ]
+    ]
+  }
+}
+]

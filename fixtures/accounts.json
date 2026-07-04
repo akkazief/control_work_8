@@ -1,0 +1,78 @@
+[
+{
+  "model": "accounts.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$cIpn4moeAbQx0rHpQ2Jg62$PGSvXF3E9Ce+HRFE7AHlnLeHQEJ/23Z8sktK/aQTXFc=",
+    "last_login": "2026-07-04T12:15:19.035Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-07-04T07:08:55.318Z",
+    "avatar": "avatars/default.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$Rlkg4QH6X2EpB0HczoWNoe$5dKpWA7sdLXTziDvV1SpL1IIwnHJYd403sdHHvy8zlA=",
+    "last_login": "2026-07-04T12:16:44.314Z",
+    "is_superuser": false,
+    "username": "moder",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-04T12:06:11Z",
+    "avatar": "avatars/moder.jpeg",
+    "groups": [
+      [
+        "Moderator"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$estmJaFOAIBsn3SSs6o6no$OtZOF1yHANidt7MCqdEfnV8Fe5KGP111VmTfSHfFRC0=",
+    "last_login": "2026-07-04T12:11:30.719Z",
+    "is_superuser": false,
+    "username": "baraban",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-04T12:11:29.937Z",
+    "avatar": "avatars/None/images.jpeg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$sTeBouHWhzaLeIMZvRlhYE$+VBOSIilCgrVmC7pQZ7rGcJs1ELJ7/A48JsXtno3NWM=",
+    "last_login": "2026-07-04T12:12:33.662Z",
+    "is_superuser": false,
+    "username": "alkaw",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-04T12:12:32.870Z",
+    "avatar": "avatars/None/pin.jpeg",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
