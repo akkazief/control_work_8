@@ -10,7 +10,7 @@
     <tbody>
         {% for topic in topics %}
 
-            <tr class="clickable-row" data-href="{% url 'topic_detail' topic.pk %}">
+            <tr class="clickable-row" data-href="{% url 'forum:topic_detail' topic.pk %}">
                 <td>{{ topic.title }}</td>
                 <td>{{ topic.author.username}}</td>
                 <td>{{ topic.created_at|date:"d.m.Y H:i" }}</td>
