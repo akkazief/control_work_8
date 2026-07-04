@@ -16,3 +16,7 @@ class User(AbstractUser):
     class Meta:
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'
+
+    @property
+    def is_moderator(self):
+        return self.groups.filter(name="Moderator").exists()

@@ -1,5 +1,109 @@
 {% extends "base.html" %}
+{% load django_bootstrap5 %}
 
 {% block content %}
+
+<div class="card my-4">
+
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h3 class="mb-0">{{ topic.title }}</h3>
+        {% if request.user == topic.author or request.user.is_moderator %}
+        <div>
+            <a href="{% url 'forum:topic_update' topic.pk %}" class="btn btn-sm btn-outline-secondary">Редактировать</a>
+            <a href="{% url 'forum:topic_delete' topic.pk %}" class="btn btn-sm btn-outline-danger">Удалить</a>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="card-body">
+        <div class="d-flex align-items-center mb-3">
+            {% if topic.author %}
+
+                    <a href="{% url 'forum:user_profile' topic.author.pk %}">
+                        <img src="{{ topic.author.avatar.url }}" class="rounded-circle me-2" width="40" height="40">
+                    </a>
+
+                <div>
+                    <a href="{% url 'forum:user_profile' topic.author.pk %}" class="text-decoration-none">
+                        {{ topic.author.username }}
+                    </a>
+
+                    <div class="text-muted small">{{ topic.created_at|date:"d.m.Y H:i" }}</div>
+                </div>
+
+            {% else %}
+                <span class="text-muted">Автор удалён — {{ topic.created_at|date:"d.m.Y H:i" }}</span>
+            {% endif %}
+
+        </div>
+
+        <p class="card-text">{{ topic.content|linebreaks }}</p>
+
+    </div>
+</div>
+<div>
+    {% if request.user.is_authenticated %}
+    <div class="card mt-4">
+        <div class="card-header">Оставить ответ</div>
+        <div class="card-body">
+            <form method="POST" action="{% url 'forum:reply_create' topic.pk %}">
+                {% csrf_token %}
+                {% bootstrap_form reply_form %}
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </form>
+        </div>
+    </div>
+    {% else %}
+        <p><a href="{% url 'accounts:login' %}?next={{ request.path }}">Войдите</a>, чтобы оставить ответ.</p>
+    {% endif %}
+</div>
+
+<h4>Ответы ({{ topic.replies.count }})</h4>
+
+{% for reply in replies %}
+<div class="card mb-2">
+    <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <div class="d-flex align-items-center mb-2">
+                {% if reply.author %}
+                    {% if reply.author.avatar %}
+                        <img src="{{ reply.author.avatar.url }}" class="rounded-circle me-2" width="32" height="32">
+                    {% endif %}
+                    <div>
+                        <a href="{% url 'forum:user_profile' reply.author.pk %}" class="text-decoration-none">
+                            {{ reply.author.username }}
+                        </a>
+                        <span class="text-muted small">
+                            ({{ reply.author.replies.count }} сообщ.) — {{ reply.created_at|date:"d.m.Y H:i" }}
+                        </span>
+                    </div>
+                {% else %}
+                    <span class="text-muted">Автор удалён — {{ reply.created_at|date:"d.m.Y H:i" }}</span>
+                {% endif %}
+            </div>
+            {% if request.user == reply.author or request.user.is_moderator %}
+            <div>
+
+                <a href="{% url 'forum:topic_update' topic.pk %}" class="btn btn-sm btn-outline-secondary">
+                            <i class="fas fa-edit"></i>
+                        </a>
+
+                <a href="{% url 'forum:topic_delete' topic.pk %}" class="btn btn-sm btn-outline-danger">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </a>
+            </div>
+            {% endif %}
+        </div>
+        <p class="card-text">{{ reply.content|linebreaks }}</p>
+    </div>
+</div>
+
+{% empty %}
+<p class="text-muted">Ответов пока нет</p>
+{% endfor %}
+
+{% include 'partial/pagination.html' %}
+
+
 
 {% endblock %}

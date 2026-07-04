@@ -20,7 +20,7 @@ class RegisterView(CreateView):
         return redirect(self.get_success_url())
 
     def get_success_url(self):
-        redirect_url = reverse("forum:list")
+        redirect_url = reverse("forum:topic_list")
 
         if self.request.GET.get("next"):
             redirect_url = self.request.GET.get("next")
