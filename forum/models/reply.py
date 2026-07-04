@@ -6,22 +6,16 @@ from .topic import Topic
 
 class Reply(BaseModel):
     topic = models.ForeignKey(
-        Topic,
-        on_delete=models.CASCADE,
-        related_name="replies",
-        verbose_name="Тема"
+        Topic, on_delete=models.CASCADE, related_name="replies", verbose_name="Тема"
     )
     author = models.ForeignKey(
         get_user_model(),
         on_delete=models.SET_NULL,
         null=True,
         related_name="replies",
-        verbose_name="Автор"
+        verbose_name="Автор",
     )
-    content = models.TextField(
-        max_length=3000,
-        verbose_name="Содержимое"
-    )
+    content = models.TextField(max_length=3000, verbose_name="Содержимое")
 
     def __str__(self):
         return f"Комментарий пользователя {self.author}"

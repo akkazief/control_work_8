@@ -12,4 +12,4 @@ class ReplyUpdateView(LoginRequiredMixin, AuthorRequiredMixin, UpdateView):
     template_name = "replies/update.html"
 
     def get_success_url(self):
-        return reverse('forum:topic_detail', kwargs={'pk': self.object.topic.pk})
+        return reverse("forum:topic_detail", kwargs={"pk": self.object.topic.pk})

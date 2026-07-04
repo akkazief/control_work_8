@@ -6,7 +6,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -15,37 +14,98 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Topic',
+            name="Topic",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Время создания')),
-                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Время изменения')),
-                ('title', models.CharField(max_length=200, verbose_name='Заголовок')),
-                ('content', models.TextField(max_length=5000, verbose_name='Описание')),
-                ('author', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='topics', to=settings.AUTH_USER_MODEL, verbose_name='Автор')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Время создания"
+                    ),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(auto_now=True, verbose_name="Время изменения"),
+                ),
+                ("title", models.CharField(max_length=200, verbose_name="Заголовок")),
+                ("content", models.TextField(max_length=5000, verbose_name="Описание")),
+                (
+                    "author",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="topics",
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="Автор",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Тема',
-                'verbose_name_plural': 'Темы',
-                'db_table': 'topic',
-                'ordering': ['-created_at'],
+                "verbose_name": "Тема",
+                "verbose_name_plural": "Темы",
+                "db_table": "topic",
+                "ordering": ["-created_at"],
             },
         ),
         migrations.CreateModel(
-            name='Reply',
+            name="Reply",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Время создания')),
-                ('updated_at', models.DateTimeField(auto_now=True, verbose_name='Время изменения')),
-                ('content', models.TextField(max_length=3000, verbose_name='Содержимое')),
-                ('author', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='replies', to=settings.AUTH_USER_MODEL, verbose_name='Автор')),
-                ('topic', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='replies', to='forum.topic', verbose_name='Тема')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Время создания"
+                    ),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(auto_now=True, verbose_name="Время изменения"),
+                ),
+                (
+                    "content",
+                    models.TextField(max_length=3000, verbose_name="Содержимое"),
+                ),
+                (
+                    "author",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="replies",
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="Автор",
+                    ),
+                ),
+                (
+                    "topic",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="replies",
+                        to="forum.topic",
+                        verbose_name="Тема",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Ответ',
-                'verbose_name_plural': 'Ответы',
-                'db_table': 'reply',
-                'ordering': ['created_at'],
+                "verbose_name": "Ответ",
+                "verbose_name_plural": "Ответы",
+                "db_table": "reply",
+                "ordering": ["created_at"],
             },
         ),
     ]

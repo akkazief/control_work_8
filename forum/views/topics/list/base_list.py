@@ -10,6 +10,8 @@ class BaseTopicListView(ListView):
     paginate_orphans = 2
 
     def get_base_queryset(self):
-        return Topic.objects.select_related('author').annotate(
-            replies_count=Count('replies')
-        ).order_by('-created_at')
+        return (
+            Topic.objects.select_related("author")
+            .annotate(replies_count=Count("replies"))
+            .order_by("-created_at")
+        )

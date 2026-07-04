@@ -1,5 +1,6 @@
 from .base_list import BaseTopicListView
 
+
 class TopicListView(BaseTopicListView):
     template_name = "topics/list.html"
 

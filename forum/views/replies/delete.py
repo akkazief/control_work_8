@@ -11,4 +11,4 @@ class ReplyDeleteView(LoginRequiredMixin, AuthorRequiredMixin, DeleteView):
     context_object_name = "reply"
 
     def get_success_url(self):
-        return reverse('forum:topic_detail', kwargs={'pk': self.object.topic.pk})
+        return reverse("forum:topic_detail", kwargs={"pk": self.object.topic.pk})

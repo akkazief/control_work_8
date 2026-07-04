@@ -6,8 +6,9 @@ from forum.forms import TopicForm
 from forum.mixins import AuthorRequiredMixin
 from forum.models import Topic
 
+
 class TopicUpdateView(LoginRequiredMixin, AuthorRequiredMixin, UpdateView):
     model = Topic
-    template_name = 'topics/update.html'
+    template_name = "topics/update.html"
     form_class = TopicForm
     success_url = reverse_lazy("forum:topic_list")

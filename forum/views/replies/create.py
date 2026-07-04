@@ -11,10 +11,10 @@ class ReplyCreateView(LoginRequiredMixin, CreateView):
     template_name = "topics/topic_detail.html"
 
     def form_valid(self, form):
-        topic = get_object_or_404(Topic, pk=self.kwargs['topic_pk'])
+        topic = get_object_or_404(Topic, pk=self.kwargs["topic_pk"])
         form.instance.topic = topic
         form.instance.author = self.request.user
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse('forum:topic_detail', kwargs={'pk': self.kwargs['topic_pk']})
+        return reverse("forum:topic_detail", kwargs={"pk": self.kwargs["topic_pk"]})

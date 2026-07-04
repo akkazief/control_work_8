@@ -3,6 +3,7 @@ from forum.models import Topic
 from django.core.paginator import Paginator
 from forum.forms import ReplyForm
 
+
 class TopicDetailView(DetailView):
     template_name = "topics/detail.html"
     model = Topic

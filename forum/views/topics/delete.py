@@ -6,9 +6,7 @@ from forum.models import Topic
 from forum.mixins import AuthorRequiredMixin
 
 
-class TopicDeleteView(LoginRequiredMixin,
-    AuthorRequiredMixin, DeleteView):
-
+class TopicDeleteView(LoginRequiredMixin, AuthorRequiredMixin, DeleteView):
     template_name = "topics/delete.html"
     model = Topic
     context_object_name = "topic"
