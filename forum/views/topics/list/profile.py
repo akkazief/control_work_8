@@ -9,10 +9,10 @@ class UserProfileView(BaseTopicListView):
     template_name = "forum/profile.html"
 
     def get_queryset(self):
-        self.profile_user = get_object_or_404(User, pk=self.kwargs['pk'])
-        return self.get_base_queryset().filter(author=self.profile_user)
+        self.user = get_object_or_404(User, pk=self.kwargs['pk'])
+        return self.get_base_queryset().filter(author=self.user)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['profile_user'] = self.profile_user
+        context['profile_user'] = self.user
         return context

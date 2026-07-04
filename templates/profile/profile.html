@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h2>Профиль {{user.username}}</h2>
+    <img src="{{ user.avatar.url }}" alt="Аватар">
+    <p>Количество сообщений: {{ user.replies.count }}</p>
+
+    {% include 'partial/topics_table.html' %}
+    {% include 'partial/pagination.html' %}
+
+{% endblock %}
