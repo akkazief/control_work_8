@@ -7,7 +7,7 @@ from forum.models import Reply
 
 class ReplyDeleteView(LoginRequiredMixin, AuthorRequiredMixin, DeleteView):
     model = Reply
-    template_name = "topics/reply_delete.html"
+    template_name = "replies/delete.html"
     context_object_name = "reply"
 
     def get_success_url(self):

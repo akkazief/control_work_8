@@ -84,11 +84,11 @@
             {% if request.user == reply.author or request.user.is_moderator %}
             <div>
 
-                <a href="{% url 'forum:topic_update' topic.pk %}" class="btn btn-sm btn-outline-secondary">
+                <a href="{% url 'forum:reply_update' topic.pk %}" class="btn btn-sm btn-outline-secondary">
                             <i class="fas fa-edit"></i>
                         </a>
 
-                <a href="{% url 'forum:topic_delete' topic.pk %}" class="btn btn-sm btn-outline-danger">
+                <a href="{% url 'forum:reply_delete' topic.pk %}" class="btn btn-sm btn-outline-danger">
                             <i class="fa-regular fa-trash-can"></i>
                         </a>
             </div>

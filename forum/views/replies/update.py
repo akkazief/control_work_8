@@ -9,7 +9,7 @@ from forum.models import Reply
 class ReplyUpdateView(LoginRequiredMixin, AuthorRequiredMixin, UpdateView):
     model = Reply
     form_class = ReplyForm
-    template_name = "topics/reply_update.html"
+    template_name = "replies/update.html"
 
     def get_success_url(self):
         return reverse('forum:topic_detail', kwargs={'pk': self.object.topic.pk})
