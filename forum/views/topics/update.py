@@ -10,6 +10,4 @@ class TopicUpdateView(LoginRequiredMixin, AuthorRequiredMixin, UpdateView):
     model = Topic
     template_name = 'topics/update.html'
     form_class = TopicForm
-
-    def get_success_url(self):
-        return reverse_lazy('topic_detail', kwargs={'pk': self.object.pk})
+    success_url = reverse_lazy("forum:topic_list")

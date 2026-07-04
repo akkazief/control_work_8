@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+    {% include 'partial/form.html' with form_action="" form_id="reply-form" form_title="Редактировать ответ" btn_txt="Сохранить" %}
+{% endblock %}

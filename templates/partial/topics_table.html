@@ -15,6 +15,19 @@
                 <td>{{ topic.author.username}}</td>
                 <td>{{ topic.created_at|date:"d.m.Y H:i" }}</td>
                 <td>{{ topic.replies_count }}</td>
+
+                    {% if request.user == topic.author or request.user.is_moderator or request.user.is_superuser  %}
+                <td>
+                    <a href="{% url 'forum:topic_update' topic.pk %}" class="btn btn-sm btn-outline-secondary">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="{% url 'forum:topic_delete' topic.pk %}" class="btn btn-sm btn-outline-danger">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </a>
+                </td>
+                    {% else %}
+                    {% endif %}
+
             </tr>
 
         {% endfor %}

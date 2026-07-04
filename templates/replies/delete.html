@@ -1,12 +1,10 @@
 {% extends "base.html" %}
-{% load django_bootstrap5 %}
 
 {% block content %}
-
     <div class="card my-5" style="max-width: 500px; margin: auto;">
-        <div class="card-header fs-5 text-center py-3 text-danger">Удаление темы</div>
+        <div class="card-header fs-5 text-center py-3 text-danger">Удаление ответа</div>
         <div class="card-body text-center">
-            <p class="fs-5">Вы уверены, что хотите удалить {{topic.title}}?</p>
+            <p class="fs-5">Вы уверены, что хотите удалить свой ответ под постом {{topic.title}}?</p>
         </div>
         <div class="card-footer d-flex justify-content-end gap-2 py-3">
 
@@ -18,5 +16,4 @@
             </form>
         </div>
     </div>
-
 {% endblock %}
