@@ -5,6 +5,9 @@
             <th>Автор</th>
             <th>Дата создания</th>
             <th>Ответов</th>
+            {% if request.user == topic.author or request.user.is_moderator or request.user.is_superuser  %}
+            <th>Действия</th>
+            {% endif %}
         </tr>
     </thead>
     <tbody>
